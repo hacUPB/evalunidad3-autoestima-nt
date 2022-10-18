@@ -3,6 +3,10 @@
 #include <string.h>
 #include "istrategy.h"
 
+istrategy *istrategy_new()
+{
+    return (istrategy*)malloc(sizeof(istrategy));
+}
 void Algoritmovoid(void *nombre)
 {
     char * resultado = malloc(sizeof(char[20]));
@@ -10,11 +14,6 @@ void Algoritmovoid(void *nombre)
     printf("%s", resultado);
     free(resultado);
 
-}
-
-istrategy *istrategy_new()
-{
-    return (istrategy*)malloc(sizeof(istrategy));
 }
 
 void istrategy_ctor(istrategy* this)
