@@ -3,7 +3,7 @@
 #include <string.h>
 #include "istrategy.h"
 
-void __Algoritmo_void(void *nombre)
+void Algoritmovoid(void *nombre)
 {
     char * resultado = malloc(sizeof(char[20]));
     strcpy(resultado,"No hay strategy");
@@ -19,7 +19,7 @@ istrategy *istrategy_new()
 
 void istrategy_ctor(istrategy* this)
 {
-    this->Algoritmo_1 = &__Algoritmo_void;
+    this->Algoritmo_1 = &Algoritmovoid;
 }
 
 void istrategy_dtor(istrategy* this)
