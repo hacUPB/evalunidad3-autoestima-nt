@@ -29,5 +29,5 @@ void SetStrategy(context* this, void* istrategy)
 
 void DoSomeBusinessLogic(context* this)
 {
-    this->istrategy->Algoritmo1(this->nombre);
+    this->istrategy->Algoritmo_1(this->nombre);
 }
