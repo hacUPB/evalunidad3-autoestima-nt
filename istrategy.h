@@ -5,7 +5,7 @@ typedef void (*Algoritmo)(void *);
 
 typedef struct
 {
-    Algoritmo Algoritmo1;
+    Algoritmo Algoritmo_1;
     
 } istrategy ; 
 
