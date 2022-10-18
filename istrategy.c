@@ -19,7 +19,7 @@ istrategy *istrategy_new()
 
 void istrategy_ctor(istrategy* this)
 {
-    this->Algoritmo1 = &__Algoritmo_void;
+    this->Algoritmo_1 = &__Algoritmo_void;
 }
 
 void istrategy_dtor(istrategy* this)
