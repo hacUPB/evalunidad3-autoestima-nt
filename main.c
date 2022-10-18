@@ -21,10 +21,9 @@ concreteStrategyB *concreteStrategyB = concreteStrategyB_new();
 concreteStrategyB_ctor(concreteStrategyB);
 
 context *context = context_new();
-context_ctor(context);
+context_ctor(context,concreteStrategyA);
 
 printf("Client: Strategy is set to normal sorting.");
-SetStrategy(context,concreteStrategyA);
 DoSomeBusinessLogic(context);
 printf("\n");
 printf("Client: Strategy is set to normal sorting.");
