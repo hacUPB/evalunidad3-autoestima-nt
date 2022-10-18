@@ -17,7 +17,7 @@ void context_ctor(context* this, void* istrategy)
     strcpy(this->nombre,"");
 }
 
-void context_dtor(context*)
+void context_dtor(context* this)
 {
    free(this->nombre); 
 }
