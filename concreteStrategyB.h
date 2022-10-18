@@ -4,11 +4,11 @@
 
 typedef struct 
 {
-    istrategy strategyB;
+    istrategy istrategy_B;
 
 } concreteStrategyB; 
 
-concreteStrategyB *new_concreteStrategyB(); 
+concreteStrategyB *concreteStrategyB_new(); 
 void concreteStrategyB_ctor(concreteStrategyB*);
 void concreteStrategyB_dtor(concreteStrategyB*);
 
