@@ -1,16 +1,20 @@
-#ifndef CONTEXT
-#define CONTEXT
-#include "IStrategy.h"
+#ifndef CONTEXT_H
+#define CONTEXT_H
+
+#include "istrategy.h"
+
 typedef struct
 {
-    IStrategy* _strategy;
-}Context;
+    istrategy* istrategy;
 
-Context* Context_New();
+    char* nombre;
 
-void ContextConstruct(IStrategy*);
-void ContextDestruct(IStrategy*);
-void SetStrategy(Context*, IStrategy*);
-void DoSomeBusinessLogic();
+} context;
+
+context context_new();
+void context_ctor(context, void);
+void context_dtor(context);
+void SetStrategy(context, void);
+void DoSomeBusinessLogic(context*);
 
 #endif

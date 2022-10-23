@@ -1,0 +1,14 @@
+-Creamos 2 punteros en la estructura, uno de tipo istrategy y otro de caracteres para el nombre y definimos que sea una estructura para la interfaz
+typedef struct
+{
+    istrategy* istrategy;
+
+    char* nombre;
+
+}
+-Aquí estarán las funciones declaradas que se usaran en el archivo .c
+context context_new();
+void context_ctor(context, void);
+void context_dtor(context);
+void SetStrategy(context, void);
+void DoSomeBusinessLogic(context*);

@@ -1,27 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Context.h"
-#include "ConcretStrategyA.h"
-#include "ConcretStrategyB.h"
+#include "context.h"
 
-Context* Context_New()
+context context_new()
 {
-    Context *cont = malloc(sizeof(Context));
-    return cont;
+    return(context)malloc(sizeof(context));
 }
-void SetStrategy(Context* cont, IStrategy* this)
-{    
-    IStrategy* IStrategy=this;
-    cont->_strategy=this;
-}
-void ContextConstruct(IStrategy*this)
+
+void context_ctor(context* this, void* istrategy)
 {
-    free(this);
+    this->istrategy = (istrategy)istrategy;
+
+    this->nombre = malloc(sizeof(char[20]));
+
+    strcpy(this->nombre,"");
 }
-void DoSomeBusinessLogic(Context* cont, IStrategy* tipo)
+
+void context_dtor(context this)
 {
-    printf("Context: Sorting data using the strategy (not sure how it'll do it)");
-    char data=cont->_strategy->doit((IStrategy*)tipo);
-    printf("%s",data);
+   free(this->nombre);
+}
+
+void SetStrategy(context* this, void* istrategy)
+{
+    this->istrategy = (istrategy)istrategy;
+}
+
+void DoSomeBusinessLogic(context this)
+{
+    this->istrategy->Algoritmo1(this->nombre);
 }
