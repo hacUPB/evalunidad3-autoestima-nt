@@ -5,29 +5,29 @@
 
 context context_new()
 {
-    return(context)malloc(sizeof(context));
+    return(context*)malloc(sizeof(context));
 }
 
 void context_ctor(context* this, void* istrategy)
 {
-    this->istrategy = (istrategy)istrategy;
+    this->istrategy = (istrategy*)istrategy;
 
     this->nombre = malloc(sizeof(char[20]));
 
     strcpy(this->nombre,"");
 }
 
-void context_dtor(context this)
+void context_dtor(context* this)
 {
    free(this->nombre);
 }
 
 void SetStrategy(context* this, void* istrategy)
 {
-    this->istrategy = (istrategy)istrategy;
+    this->istrategy = (istrategy*)istrategy;
 }
 
-void DoSomeBusinessLogic(context this)
+void DoSomeBusinessLogic(context* this)
 {
     this->istrategy->Algoritmo1(this->nombre);
 }
