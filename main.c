@@ -43,4 +43,5 @@ free(concreteStrategyA);
 concreteStrategyB_dtor(concreteStrategyB);
 free(concreteStrategyB);
 
+return 0;
 }
