@@ -10,7 +10,7 @@ context context_new()
 
 void context_ctor(context* this, void* istrategy)
 {
-    this->istrategy = (istrategy*)istrategy;
+    this->istrategy = (interface*)istrategy;
 
     this->nombre = malloc(sizeof(char[20]));
 
@@ -29,5 +29,5 @@ void SetStrategy(context* this, void* istrategy)
 
 void DoSomeBusinessLogic(context* this)
 {
-    this->istrategy->Algoritmo1(this->nombre);
+    this->istrategy->Algoritmo_1(this->nombre);
 }
