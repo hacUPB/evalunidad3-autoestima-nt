@@ -5,7 +5,7 @@
 
 typedef struct
 {
-    istrategy* istrategy;
+    interface* istrategy;
 
     char* nombre;
 
