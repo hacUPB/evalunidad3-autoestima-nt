@@ -23,5 +23,5 @@ void Algoritmo1A(void * nombre)
 void concreteStrategyA_ctor(concreteStrategyA *this)
 {
     istrategy_ctor((istrategy*)this);
-    this->concreteStrategyA.algoritmo1 = Algoritmo1A;
+    this->concreteStrategyA.algoritmo_1 = Algoritmo1A;
 }
