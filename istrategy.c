@@ -13,14 +13,11 @@ void Algoritmovoid(void *nombre)
     strcpy(resultado,"No hay strategy");
     printf("%s", resultado);
     free(resultado);
-
 }
-
 void istrategy_ctor(istrategy* this)
 {
     this->Algoritmo_1 = &Algoritmovoid;
 }
-
 void istrategy_dtor(istrategy* this)
 {
     free(this);
