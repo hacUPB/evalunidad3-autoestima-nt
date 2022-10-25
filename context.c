@@ -14,7 +14,7 @@ void context_ctor(context *this, void *interface)
 
     this->nombre = malloc(sizeof(char[20]));
 
-    strcpy(this->nombre,"");
+    strcpy(this->nombre,"a,b,c,d,e");
 }
 
 void context_dtor(context *this)

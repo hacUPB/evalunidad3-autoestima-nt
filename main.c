@@ -14,10 +14,10 @@ int main(void)
 istrategy *istrategy = istrategy_new();
 istrategy_ctor(istrategy);
 
-concreteStrategyA *concreteStrategyA = concreteStrategyA_new();
+concreteStrategyA *concreteStrategyA = new_concreteStrategyA();
 concreteStrategyA_ctor(concreteStrategyA);
 
-concreteStrategyB *concreteStrategyB = concreteStrategyB_new();
+concreteStrategyB *concreteStrategyB = new_concreteStrategyB();
 concreteStrategyB_ctor(concreteStrategyB);
 
 context *context = context_New();
