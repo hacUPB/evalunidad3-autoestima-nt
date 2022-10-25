@@ -11,16 +11,16 @@ concreteStrategyB *nuevaestrategiaB()
 void Algoritmo1B(void * nombre)
 {
     printf("Client: Strategy is set to reverse sorting.");
-    char* lista = malloc(sizeof(char[15]));
-    strcpy(lista,(char*)nombre);
-    Reverse(lista);
-    free(lista);
+    char* list = malloc(sizeof(char[20]));
+    strcpy(list,(char*)nombre);
+    Reverse(list);
+    free(list);
 }
-void invert (char * lista)
+void invert (char * list)
 {
     char *puntero_1, *puntero_2;
-    puntero_1 = lista;
-    puntero_2 = lista + strlen(lista) - 1;
+    puntero_1 = list;
+    puntero_2 = list + strlen(list) - 1;
     char noInvert = *puntero_2;
     do
     {
