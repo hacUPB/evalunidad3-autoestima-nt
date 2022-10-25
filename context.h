@@ -6,9 +6,7 @@
 typedef struct
 {
     istrategy* interface;
-
     char* nombre;
-
 } context;
 
 context *context_New();
