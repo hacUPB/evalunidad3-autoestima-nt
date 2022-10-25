@@ -21,7 +21,6 @@ void invert (char * lista)
     char *puntero_1, *puntero_2;
     puntero_1 = lista;
     puntero_2 = lista + strlen(lista) - 1;
-
     char noInvert = *puntero_2;
     do
     {
