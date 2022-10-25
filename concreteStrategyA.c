@@ -10,11 +10,11 @@ concreteStrategyA *new_concreteStrategyA()
     return(concreteStrategyA *)malloc(sizeof(concreteStrategyA));
 }
 
-void Algoritmo1A(void * nombre)
+void Algoritmo1A(void * name)
 {
     printf("Context:Sorting data using the strategy (not sure how it'll do it)\n");
     char *res =malloc(sizeof(char[20]));
-    strcpy(res,(char*)nombre);
+    strcpy(res,(char*)name);
     printf("%s", res);
     printf("\n");
     free(res);
