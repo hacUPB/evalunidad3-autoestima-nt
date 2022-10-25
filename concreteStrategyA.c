@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "concreteStrategyA.h"
+#include "context.h"
 
 concreteStrategyA *new_concreteStrategyA()
 {
@@ -23,5 +24,5 @@ void Algoritmo1A(void * nombre)
 void concreteStrategyA_ctor(concreteStrategyA *this)
 {
     istrategy_ctor((istrategy*)this);
-    this->concreteStrategyA.algoritmo_1 = Algoritmo1A;
+    this->strategyA.Algoritmo_1 = Algoritmo1A;
 }
