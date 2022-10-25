@@ -11,7 +11,7 @@ concreteStrategyB *nuevaestrategiaB()
 
 void Algoritmo1B(void * nombre)
 {
-    printf("Contexto: Imprimimos los datos pero invertidos:");
+    printf("Client: Strategy is set to reverse sorting.");
 
 
     char* lista = malloc(sizeof(char[15]));
