@@ -5,14 +5,14 @@
 
 typedef struct
 {
-    interface* istrategy;
+    istrategy* interface;
 
     char* nombre;
 
 } context;
 
-context context_new();
-void context_ctor(context*, void);
+context *context_New();
+void context_ctor(context*, void*);
 void context_dtor(context*);
 void SetStrategy(context*, void*);
 void DoSomeBusinessLogic(context*);
