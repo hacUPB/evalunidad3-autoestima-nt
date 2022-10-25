@@ -2,16 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "concreteStrategyB.h"
-#include "Context.h"
+#include "context.h"
 
-concreteStrategyB_ctor *nuevaestrategiaB()
+concreteStrategyB *nuevaestrategiaB()
 {
     return (concreteStrategyB*)malloc(sizeof(concreteStrategyB));
 }
 
-void algortimB(void * nombre)
+void Algoritmo1B(void * nombre)
 {
-
     printf("Contexto: Imprimimos los datos pero invertidos:");
 
 
@@ -22,47 +21,41 @@ void algortimB(void * nombre)
     Reverse(lista);
 
     free(lista);
-
 }
 
-void Reverse (char * lista)
+void invert (char * lista)
 {
-    char *ptr1, *ptr2;
-    ptr1 = lista;
-    ptr2 = lista + strlen(lista) - 1;
+    char *puntero_1, *puntero_2;
+    puntero_1 = lista;
+    puntero_2 = lista + strlen(lista) - 1;
 
-    char NInver = *ptr2;
+    char noInvert = *puntero_2;
     do
     {
-
-        if (NInver != '\0')
+        if (noInvert != '\0')
         {
+            puntero_2--;
 
-            ptr2--;
+            printf("%c", noInvert);
 
-            printf("%c", NInver);
-
-            NInver = *ptr2;
+            noInvert = *putero_2;
         }
         else
         {
-
-            ptr2--;
+            puntero_2--;
         }
-
-    } while (ptr2 >= ptr1);
+    } while (puntero_2 >= puntero_1);
     printf("\n");
 }
 
-void ctorEstrategiaB(estrategiaB *this)
+void concreteStrategyB_ctor(concreteStrategyB *this)
 {
-
-    ctorInterfaz((Interfaz*)this);
-
-
+    istrategy_ctor((istrategy*)this);
+    this->strategyB.Algoritmo_1 = Algoritmo1B;
 }
 
-void dtorEstrategiaB(estrategiaB *this)
+void concreteStrategyB_dtor(concreteStrategyB *this)
 {
-    dtorInterfaz((Interfaz*)this);
+    istrategy_dtor((istrategy*)this);
 }
+
