@@ -1,39 +1,32 @@
--Declaramos el istrategy que se encontraba en el .h para así poder usar las funciones
-istrategy *istrategy_new()
+-Declaramos el context ubicado en el .h para que pueda funcionar el
+context pada declarar que guarde un espacio de memoria context_new()
 {
-    return (istrategy*)malloc(sizeof(istrategy));
+    return(context)malloc(sizeof(context));
 }
 
--Usamos esta funcion para que traiga el nombre y que retorne nada
-void Algoritmovoid(void *nombre)
+-Hacemos un constructor para con 2 punteros relacionados al istrategy y poder copiar el nombre del strategy
+void context_ctor(context *this, void *interface)
 {
-
--Se crea un puntero a la cadena de caracteres (max 20)
-    char * resultado = malloc(sizeof(char[20]));
-
--Se copia la cadena de caracteres a este puntero
-    strcpy(resultado,"No hay strategy");
-
--La imprimimos
-    printf("%s", resultado);
-
--Se libera la memoria
-    free(resultado);
-
+    this->interface = (istrategy*)interface;
+    this->nombre = malloc(sizeof(char[20]));
+    strcpy(this->nombre,"a,b,c,d,e");
 }
 
-
--Aquí se crea el ctor de istrategy
-void istrategy_ctor(istrategy* this)
+-Creamos el destructor para liberar el espacio de memoria del nombre del strategy
+void context_dtor(context *this)
 {
--con this* se accede al dato Algoritmo_1 y se da la direccion de Algoritmovoid
-    this->Algoritmo_1 = &Algoritmovoid;
-
+   free(this->nombre);
 }
 
--El destructor de istrategy para liberar memoria
-void istrategy_dtor(istrategy* this)
+-ingresamos una funcion con 2 punteros de tipo context y un void para definir e ingresar el tipo de estartegia
+void SetStrategy(context *this, void *interface)
 {
--liberar la memoria de this
-    free(this);
+    this->interface = (istrategy*)interface;
 }
+
+-Por ultimo creamos el una ultima funcion que haga uso de Algoritmo1 segun istrategy en funcion del nommbre
+void DoSomeBusinessLogic(context *this)
+{
+    this->interface->Algoritmo_1(this->nombre);
+}
+
