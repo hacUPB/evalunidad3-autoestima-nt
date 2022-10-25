@@ -8,11 +8,11 @@ concreteStrategyB *nuevaestrategiaB()
 {
     return (concreteStrategyB*)malloc(sizeof(concreteStrategyB));
 }
-void Algoritmo1B(void * nombre)
+void Algoritmo1B(void * name)
 {
     printf("Client: Strategy is set to reverse sorting.");
     char* list = malloc(sizeof(char[20]));
-    strcpy(list,(char*)nombre);
+    strcpy(list,(char*)name);
     Reverse(list);
     free(list);
 }
