@@ -1,7 +1,7 @@
 -Creamos 2 punteros en la estructura, uno de tipo istrategy y otro de caracteres para el nombre y definimos que sea una estructura para la interfaz
 typedef struct
 {
-    interface* istrategy;
+    istrategy* interface;
 
     char* nombre;
 
