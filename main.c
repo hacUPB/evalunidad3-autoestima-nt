@@ -37,10 +37,8 @@ free(context);
 istrategy_dtor(istrategy);
 free(istrategy);
 
-concreteStrategyA_dtor(concreteStrategyA);
 free(concreteStrategyA);
 
-concreteStrategyB_dtor(concreteStrategyB);
 free(concreteStrategyB);
 
 return 0;
