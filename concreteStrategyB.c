@@ -8,21 +8,14 @@ concreteStrategyB *nuevaestrategiaB()
 {
     return (concreteStrategyB*)malloc(sizeof(concreteStrategyB));
 }
-
 void Algoritmo1B(void * nombre)
 {
     printf("Client: Strategy is set to reverse sorting.");
-
-
     char* lista = malloc(sizeof(char[15]));
-
-
     strcpy(lista,(char*)nombre);
     Reverse(lista);
-
     free(lista);
 }
-
 void invert (char * lista)
 {
     char *puntero_1, *puntero_2;
@@ -35,9 +28,7 @@ void invert (char * lista)
         if (noInvert != '\0')
         {
             puntero_2--;
-
             printf("%c", noInvert);
-
             noInvert = *puntero_2;
         }
         else
@@ -47,15 +38,12 @@ void invert (char * lista)
     } while (puntero_2 >= puntero_1);
     printf("\n");
 }
-
 void concreteStrategyB_ctor(concreteStrategyB *this)
 {
     istrategy_ctor((istrategy*)this);
     this->strategyB.Algoritmo_1 = Algoritmo1B;
 }
-
 void concreteStrategyB_dtor(concreteStrategyB *this)
 {
     istrategy_dtor((istrategy*)this);
 }
-
