@@ -38,7 +38,7 @@ void invert (char * lista)
 
             printf("%c", noInvert);
 
-            noInvert = *putero_2;
+            noInvert = *puntero_2;
         }
         else
         {
