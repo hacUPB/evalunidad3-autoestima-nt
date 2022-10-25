@@ -3,31 +3,32 @@
 #include <string.h>
 #include "context.h"
 
-context context_new()
+context *context_New()
 {
     return(context*)malloc(sizeof(context));
 }
 
-void context_ctor(context* this, void* istrategy)
+void context_ctor(context *this, void *interface)
 {
-    this->istrategy = (interface*)istrategy;
+    this->interface = (istrategy*)interface;
 
     this->nombre = malloc(sizeof(char[20]));
 
     strcpy(this->nombre,"");
 }
 
-void context_dtor(context* this)
+void context_dtor(context *this)
 {
    free(this->nombre);
 }
 
-void SetStrategy(context* this, void* istrategy)
+void SetStrategy(context *this, void *interface)
 {
-    this->istrategy = (istrategy*)istrategy;
+    this->interface = (istrategy*)interface;
+
 }
 
-void DoSomeBusinessLogic(context* this)
+void DoSomeBusinessLogic(context *this)
 {
-    this->istrategy->Algoritmo_1(this->nombre);
+    this->interface->Algoritmo_1(this->nombre);
 }
