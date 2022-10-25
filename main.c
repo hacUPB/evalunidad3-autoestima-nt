@@ -24,9 +24,9 @@ context *context = context_New();
 context_ctor(context, concreteStrategyA);
 
 printf("Client: Strategy is set to normal sorting.");
-SetStrategy(context,concreteStrategyA);
 DoSomeBusinessLogic(context);
 printf("\n");
+
 printf("Client: Strategy is set to normal sorting.");
 SetStrategy(context,concreteStrategyB);
 DoSomeBusinessLogic(context);
@@ -45,3 +45,4 @@ free(concreteStrategyB);
 
 return 0;
 }
+
