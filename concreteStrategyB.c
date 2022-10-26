@@ -8,18 +8,12 @@ concreteStrategyB *new_concreteStrategyB()
 {
     return (concreteStrategyB*)malloc(sizeof(concreteStrategyB));
 }
-
-void Algoritmo1B(void * nombre)
+void Algoritmo1B(void * name)
 {
     printf("Contexto: Imprimimos los datos pero invertidos:");
-
-
     char* lista = malloc(sizeof(char[15]));
-
-
-    strcpy(lista,(char*)nombre);
+    strcpy(lista,(char*)name);
     invert(lista);
-
     free(lista);
 }
 
@@ -28,16 +22,13 @@ void invert (char * lista)
     char *puntero_1, *puntero_2;
     puntero_1 = lista;
     puntero_2 = lista + strlen(lista) - 1;
-
     char noInvert = *puntero_2;
     do
     {
         if (noInvert != '\0')
         {
             puntero_2--;
-
             printf("%c", noInvert);
-
             noInvert = *puntero_2;
         }
         else
@@ -47,13 +38,11 @@ void invert (char * lista)
     } while (puntero_2 >= puntero_1);
     printf("\n");
 }
-
 void concreteStrategyB_ctor(concreteStrategyB *this)
 {
     istrategy_ctor((istrategy*)this);
     this->strategyB.Algoritmo_1 = Algoritmo1B;
 }
-
 void concreteStrategyB_dtor(concreteStrategyB *this)
 {
     istrategy_dtor((istrategy*)this);
